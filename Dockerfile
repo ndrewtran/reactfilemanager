@@ -11,6 +11,7 @@ RUN apk add --no-cache \
     libwebp-dev \
     libxml2-dev \
     libzip-dev \
+    mariadb-client \
     nginx \
     nodejs \
     npm \
