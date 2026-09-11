@@ -1,4 +1,4 @@
-FROM php:8.3-fpm-alpine
+FROM php:8.3.33-fpm-alpine
 
 RUN apk add --no-cache \
     curl \
@@ -37,6 +37,7 @@ RUN docker-php-ext-configure gd \
         zip
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY docker/php.ini /usr/local/etc/php/conf.d/zz-react-file-manager.ini
 
 WORKDIR /var/www/html
 COPY . .
